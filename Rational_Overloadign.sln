@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Rational_Overloadign", "Rational_Overloadign\Rational_Overloadign.vcxproj", "{A2F8EE00-31FE-4D65-A33D-A10E8ACEE07D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RationalTest", "RationalTest\RationalTest.vcxproj", "{07C955C6-3265-4B82-BCAB-A55CB9421B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{A2F8EE00-31FE-4D65-A33D-A10E8ACEE07D}.Release|x64.Build.0 = Release|x64
 		{A2F8EE00-31FE-4D65-A33D-A10E8ACEE07D}.Release|x86.ActiveCfg = Release|Win32
 		{A2F8EE00-31FE-4D65-A33D-A10E8ACEE07D}.Release|x86.Build.0 = Release|Win32
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Debug|x64.ActiveCfg = Debug|x64
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Debug|x64.Build.0 = Debug|x64
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Debug|x86.ActiveCfg = Debug|Win32
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Debug|x86.Build.0 = Debug|Win32
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Release|x64.ActiveCfg = Release|x64
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Release|x64.Build.0 = Release|x64
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Release|x86.ActiveCfg = Release|Win32
+		{07C955C6-3265-4B82-BCAB-A55CB9421B9A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

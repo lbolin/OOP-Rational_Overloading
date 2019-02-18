@@ -1,6 +1,14 @@
 //Rational.cpp
 #include"Rational.h"
 #include<sstream>
+#include<istream>
+
+//Rational::Rational(int numerator = 0, int denominator = 1)
+//{
+//	Rational::numerator = numerator;
+//	Rational::denominator = denominator;
+//}
+
 Rational::Rational(long NewNumerator, long NewDenominator)
 {
 
@@ -8,6 +16,8 @@ Rational::Rational(long NewNumerator, long NewDenominator)
 	denominator = NewDenominator;
 	Reduce();
 }
+Rational::~Rational() {};
+
 const Rational& Rational::operator=(const Rational & rValue)
 {
 	numerator = rValue.numerator;
@@ -15,12 +25,14 @@ const Rational& Rational::operator=(const Rational & rValue)
 	Reduce();
 	return *this;
 }
+
 Rational Rational::operator++()//Rational& Rational::operator++()
 {
 	numerator += denominator;
 	Reduce();
 	return *this;
 }
+
 Rational Rational::operator++(int Garbage)
 {
 	Rational result = *this;
@@ -28,12 +40,14 @@ Rational Rational::operator++(int Garbage)
 	Reduce();
 	return result;
 }
+
 Rational Rational::operator--()//Rational& Rational::operator++()
 {
 	numerator -= denominator;
 	Reduce();
 	return *this;
 }
+
 Rational Rational::operator--(int Garbage)
 {
 	Rational result = *this;
@@ -41,6 +55,7 @@ Rational Rational::operator--(int Garbage)
 	Reduce();
 	return result;
 }
+
 bool Rational::operator==(const Rational & rValue) const
 {
 	bool result = true;
@@ -50,6 +65,7 @@ bool Rational::operator==(const Rational & rValue) const
 	}
 	return result;
 }
+
 bool Rational::operator>(const Rational & rValue) const
 {
 	bool result = false;
@@ -94,7 +110,7 @@ bool Rational::operator>=(const Rational & rValue) const
 
 bool Rational::operator!=(const Rational & rValue) const
 {
-	return!(*this == rValue);
+	return !(*this == rValue);
 }
 
 
@@ -105,10 +121,26 @@ string Rational::operator()() const
 	return stream.str();
 }
 
+double Rational::operatordouble()
+{
+	return(double(numerator) / double(denominator));
+
+}
+
+
+
 ostream &operator<<(ostream & out, const Rational & rational)
 {
 	out << rational.getNumerator() << "\\" << rational.getDenominator();
 	return out;
+}
+
+istream &operator>>(istream& in,  Rational& rational)
+{
+	long num, den;
+	in >> num >> den;
+	rational = Rational(num,den);
+	return in;
 }
 
 long Rational::getNumerator()const
@@ -151,9 +183,31 @@ void Rational::Reduce()
 	denominator = denominator / GCD;
 }
 
+Rational Rational::operator+=(Rational rValue)
+{
+	return(*this = *this + rValue);
+}
+
+Rational Rational::operator-=(Rational rValue)
+{
+	return(*this = *this - rValue);
+}
+
+
+Rational Rational::operator*=(Rational rValue)
+{
+	return(*this = *this * rValue);
+}
+
+
+Rational Rational::operator/=(Rational rValue)
+{
+	return(*this = *this / rValue);
+}
+
 Rational operator*(Rational lValue, Rational rValue)
 {
-	Rational result(lValue.getNumerator() * rValue.getNumerator(), lValue.getDenominator() * lValue.getDenominator);
+	Rational result(lValue.getNumerator() * rValue.getNumerator(), lValue.getDenominator() * lValue.getDenominator());
 	return result;
 }
 
@@ -175,3 +229,10 @@ Rational operator/(Rational lValue, Rational rValue)
 {
 	return lValue * Rational(rValue.getDenominator(), rValue.getNumerator());
 }
+
+Rational operator^(Rational lvalue, int rValue)
+{
+	long num = lvalue.getNumerator() ^ rValue, den = lvalue.getDenominator() ^ rValue;
+	return Rational(num, den);
+}
+
