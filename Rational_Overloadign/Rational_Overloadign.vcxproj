@@ -79,7 +79,8 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>X:\Lauren\Computer Science\Comp 345\Rational_Overloadign\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Rational.obj;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,8 +123,8 @@
     <ClInclude Include="Rational.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Rational.cpp" />
-    <ClCompile Include="RationalMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RationalTest\RationalTest.vcxproj">
